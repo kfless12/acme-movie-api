@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
-    "test:dev": "npm run test -- --watch"
+    "test:dev": "DATABASE_URL=postgres://localhost/acme_db_test npm run test -- --watch",
+    "start:dev": "nodemon server"
   },
   "repository": {
     "type": "git",
@@ -20,7 +21,8 @@
   "homepage": "https://github.com/kfless12/acme-movie-api#readme",
   "devDependencies": {
     "chai": "^4.3.4",
-    "mocha": "^8.3.2"
+    "mocha": "^8.3.2",
+    "nodemon": "^2.0.7"
   },
   "dependencies": {
     "express": "^4.17.1",

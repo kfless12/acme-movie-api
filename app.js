@@ -22,3 +22,11 @@ app.get('/api/movies', async (req, res, next) => {
     next(error);
   }
 });
+
+app.get('/api/actors', async (req, res, next) => {
+  try {
+    res.send(await models.Actor.findAll());
+  } catch (error) {
+    next(error);
+  }
+});
