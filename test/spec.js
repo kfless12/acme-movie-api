@@ -1,8 +1,13 @@
-var assert = require('assert');
-describe('Array', function() {
-  describe('#indexOf()', function() {
-    it('should return -1 when the value is not present', function() {
-      assert.equal([1, 2, 3].indexOf(4), -1);
+const { expect } = require('chai');
+
+const app = require('supertest')(require('../app'));
+
+describe('Routes', function() {
+  describe('first route check  (/)', function() {
+    it('should show the text sent from / route', async()=>{
+      const response = await app.get('/');
+      expect(response.status).to.equal(200);
+      expect(response.text).to.include('The Acme API');
     });
   });
 });
